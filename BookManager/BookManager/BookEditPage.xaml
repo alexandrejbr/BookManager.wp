@@ -1,0 +1,60 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="BookManager.BookEditPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:sys="clr-namespace:System;assembly=mscorlib" FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="PageTitle" Text="EDITAR DADOS DO LIVRO" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <!--<TextBlock x:Name="PageTitle" Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>-->
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
+                <StackPanel>
+                    <!--<TextBlock x:Name="Label_Type" Text="tipo de entrada" Style="{StaticResource PhoneTextExtraLargeStyle}"/>-->
+                    <toolkit:ListPicker x:Name="LP_EntryType" Header="Escolha o tipo de entrada:">
+                    <!--<sys:String>Livro que quero</sys:String>
+                    <sys:String>Livro que emprestei</sys:String>
+                    <sys:String>Livro que me foi emprestado</sys:String>-->
+                    </toolkit:ListPicker>
+                    <TextBlock x:Name="Label_Title" Text="título" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                    <TextBox x:Name="Value_Title" TextWrapping="Wrap" Text=""/>
+                    <TextBlock x:Name="Label_Author" Text="autor" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                    <TextBox x:Name="Value_Author" TextWrapping="Wrap" Text=""/>
+                    <TextBlock x:Name="Label_Publisher" Text="editora" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                    <TextBox x:Name="Value_Publisher" TextWrapping="Wrap" Text=""/>
+                    <TextBlock x:Name="Label_ISBN" Text="isbn" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                    <TextBox x:Name="Value_ISBN" TextWrapping="Wrap" Text="" />
+                    <TextBlock x:Name="Label_Comments" Text="comentários" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                    <TextBox x:Name="Value_Comments" TextWrapping="Wrap" Text=""/>
+                </StackPanel>
+            </ScrollViewer>    
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.save.rest.png" Text="gravar" Click="SaveChanges"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

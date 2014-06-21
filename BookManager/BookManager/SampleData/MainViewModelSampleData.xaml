@@ -1,0 +1,15 @@
+﻿<local:MainViewModel 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:BookManager" 
+    SampleProperty="Sample Text Property Value">
+    
+    <local:MainViewModel.Items>
+        <local:BookViewModel 
+            Author = "Somerset Maugham" Title = "Servidão Humana" Publisher = "ASA"/>
+        <local:BookViewModel 
+            Author = "Somerset Maugham" Title = "O Fio da Navalha" Publisher = "ASA"/>
+        <local:BookViewModel 
+            Author = "Somerset Maugham" Title = "O Véu Pintado" Publisher = "ASA"/>
+    </local:MainViewModel.Items>
+</local:MainViewModel>
